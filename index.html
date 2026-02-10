@@ -8,29 +8,108 @@
 </head>
 <body>
 
+    <div class="header">
+        <h2>Заказ товаров</h2>
+    
+        <label>
+            🏪 Название магазина:
+            <input type="text" id="store-name" placeholder="Введите название магазина">
+        </label>
+ <br>
+ <br>
+        <label>
+            👨‍💼 Торговый агент:
+            <input type="text" id="agent-name" placeholder="Введите имя агента">
+        </label>
+
+
+        <div class="order-info">
+            <p>📅 Дата: <span id="order-date"></span></p>
+            <p>🧾 Номер заказа: <span id="order-number"></span></p>
+        </div>
+        
+
+    </div>
+
 <h1>Каталог товаров</h1>
 
-<div class="product">
-    <input type="checkbox" class="check" data-price="60">
-    <span>Рис (60 сом / кг)</span>
-    <input type="number" class="qty" placeholder="кг">
+<div class="catalog">
+
+    <div class="card">
+        <img src="images/рис.jfif" alt="Рис">
+        <h3>Рис</h3>
+        <p>Цена: <b>60 сом / кг</b></p>
+        <input type="number"
+        min="0"
+        placeholder="кг"
+        data-price="60"
+        data-name="Рис"
+        data-unit="кг">    </div>
+
+    <div class="card">
+        <img src="images/./помидор.jfif" alt="Сахар">
+        <h3>Сахар</h3>
+        <p>Цена: <b>50 сом / кг</b></p>
+        <input type="number"
+        min="0"
+        placeholder="кг"
+        data-price="60"
+        data-name="помидор"
+        data-unit="кг">    </div>
+
+    <div class="card">
+        <img src="images/Без названия.jfif" alt="Макароны">
+        <h3>Макароны</h3>
+        <p>Цена: <b>45 сом / шт</b></p>
+        <input type="number"
+        min="0"
+        placeholder="кг"
+        data-price="60"
+        data-name="Рис"
+        data-unit="кг">    </div>
+
 </div>
 
-<div class="product">
-    <input type="checkbox" class="check" data-price="50">
-    <span>Сахар (50 сом / кг)</span>
-    <input type="number" class="qty" placeholder="кг">
+<button onclick="calculate()">Посчитать заказ</button>
+
+<button class="whatsapp" onclick="sendWhatsApp()">
+    📲 Отправить заказ в WhatsApp
+</button>
+
+<!-- <h2>Итого: <span id="total">0</span> сом</h2> -->
+<!-- <div class="total">
+    Итого: <span id="total">0</span> сом
+</div> -->
+
+<div class="order">
+    <h3>🧾 Список заказа</h3>
+    <div class="order">
+        <h3>🧾 Заказ</h3>
+
+        <p><b>Магазин:</b> <span id="store-display">—</span></p>
+        <br>
+        <p><b>Торговый агент:</b> <span id="agent-display">—</span></p>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Кол-во</th>
+                    <th>Ед.</th>
+                    <th>Сумма</th>
+                </tr>
+            </thead>
+            <tbody id="order-table">
+                <!-- товары появятся здесь -->
+            </tbody>
+        </table>
+    
+        <div class="total">
+            Итого: <span id="total">0</span> сом
+        </div>
+        
+    </div>
 </div>
-
-<div class="product">
-    <input type="checkbox" class="check" data-price="45">
-    <span>Макароны (45 сом / шт)</span>
-    <input type="number" class="qty" placeholder="шт">
-</div>
-
-<button onclick="calculate()">Посчитать</button>
-
-<h2>Общая сумма: <span id="total">0</span> сом</h2>
 
 <script src="script.js"></script>
 </body>
